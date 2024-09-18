@@ -1,94 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IF-Alcent</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="./img/logoIF.png"
-      type="image/x-icon"
-    />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF-Alcent Pembelajaran Interaktif</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="./img/logoIF.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Bumper Intro Video -->
+    <div class="video-container">
+        <video id="bumperVideo" controls preload="auto">
+            <source src="video/bumper-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Header Section with Navigation -->
     <header>
-      <nav class="navbar">
-        <h3>informatika</h3>
-        <ul>
-          <li><a href="#">Commands</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Invite</a></li>
-        </ul>
-        <button class="hamburger">
-          <div class="bar"></div>
-        </button>
-      </nav>
+        <nav class="navbar">
+            <h3>Informatika</h3>
+            <ul>
+                <li><a href="#pendahuluan">Pendahuluan</a></li>
+                <li><a href="#uraian-materi">Uraian Materi</a></li>
+                <li><a href="#latihan">Latihan</a></li>
+                <li><a href="#tes">Tes</a></li>
+                <li><a href="#petunjuk-penggunaan">Petunjuk</a></li>
+                <li><a href="#referensi">Referensi</a></li>
+            </ul>
+            <button class="hamburger">
+                <div class="bar"></div>
+            </button>
+        </nav>
     </header>
 
+    <!-- Mobile Navigation -->
     <nav class="mobile-nav">
-      <a href="#">test nav</a>
-      <a href="#">Support</a>
-      <a href="#">Invite</a>
+        <a href="#pendahuluan">Pendahuluan</a>
+        <a href="#uraian-materi">Uraian Materi</a>
+        <a href="#latihan">Latihan</a>
+        <a href="#tes">Tes</a>
+        <a href="#petunjuk-penggunaan">Petunjuk</a>
+        <a href="#referensi">Referensi</a>
     </nav>
 
+    <!-- Introduction Section -->
+    <div class="intro-section">
+        <h2>Topik Pembelajaran: [Nama Topik]</h2>
+        <p>Sasaran: [Deskripsikan Sasaran]</p>
+        <p>Tujuan Pembelajaran: [Deskripsikan Tujuan Pembelajaran]</p>
+    </div>
+
+    <!-- Hero Image Section with Parallax Effect -->
     <div class="hero-image">
-      <div class="hero-text">
-        <h1>Informatika</h1>
-        <p>
-          lorem
-        </p>
-        <!-- <a href="#"><button type="button">Invite me</button></a> -->
-      </div>
+        <div class="hero-text">
+            <h1>Informatika</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
     </div>
 
-    <div class="card-container">
-      <div class="card">
-        <h1>test</h1>
-        <p>
-          lorem
-        </p>
-      </div>
-      <div class="card">
-        <h1>test</h1>
-        <p>
-          lorem
-        </p>
-      </div>
-      <div class="card">
-        <h1>test</h1>
-        <p>
-          lorem
-        </p>
-      </div>
-      <div class="card">
-        <h1>test</h1>
-        <p>
-        lorem
-        </p>
-      </div>
+    <div class="container">
+        <!-- Embed Canvas -->
+        <section id="canvas-embed">
+            <h2>Kursus Online: Pengenalan Bahasa Pemrograman</h2>
+            <div class="embed-container">
+                <iframe src="https://your-canvas-course-link" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+    
+        <!-- Embed Quizizz -->
+        <section id="quizizz-embed">
+            <h2>Latihan Interaktif: Kuiz Pemrograman</h2>
+            <div class="embed-container">
+                <iframe src="https://quizizz.com/join/your-quizizz-link" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
     </div>
+    
 
-    <div class="banner">
-      <h1>lorem</h1>
-      <a href="#"><button class="button">Support </button></a>
-      <a href="#"><button class="button-green"> Community</button></a>
-    </div>
+    <!-- Petunjuk Penggunaan -->
+    <section id="petunjuk-penggunaan">
+        <h2>Petunjuk Penggunaan</h2>
+        <p>Gunakan navigasi di atas untuk berpindah antar bagian. Klik pada latihan atau tes untuk menguji pemahaman Anda.</p>
+    </section>
 
+    <!-- Referensi Section -->
+    <section id="referensi">
+        <h2>Referensi</h2>
+        <ul>
+            <li>[Referensi 1: Judul, Penulis, Tahun]</li>
+            <li>[Referensi 2: Judul, Penulis, Tahun]</li>
+            <li>[Referensi 3: Judul, Penulis, Tahun]</li>
+        </ul>
+    </section>
+
+    <!-- Footer Section -->
     <footer class="footer">
-      <p>IF-Alcent-Site Created by IF-Alcent</a> | Made with by iqba0</p>
+        <p>IF-Alcent-Site Created by IF-Alcent | Made with love by iqba0</p>
     </footer>
 
-    <script>
-      window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-          navbar.classList.add('transparent');
-        } else {
-          navbar.classList.remove('transparent');
-        }
-      });
+    <!-- JavaScript for Interactive Elements -->
+    <script src="script.js">
     </script>
-  </body>
+</body>
 </html>

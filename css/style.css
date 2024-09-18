@@ -4,14 +4,16 @@ body {
   margin: 0px;
   height: 100%;
   font-family: 'Poppins', sans-serif;
-  background-color: #1a1a1e;
+  background-color: #1a1a1e; /* Tetap menggunakan latar belakang gelap */
+  color: #ffffff; /* Ubah teks menjadi putih agar lebih kontras dengan latar belakang */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 .navbar {
-  background: url("../img/nav-bkg.jpg");
+  background-color: #1a1a1e;
+  transition: background 0.3s ease; /* Transisi untuk efek halus */
   color: white;
   position: fixed;
   top: 0;
@@ -31,10 +33,16 @@ body {
   z-index: 999; /* Menjaga navbar tetap di atas elemen lain */
 }
 
+.navbar.transparent {
+  background-color: rgba(26, 26, 30, 0.5); /* Transparansi navbar saat di-scroll */
+  transition: background 0.3s ease; /* Transisi untuk efek halus */
+}
+
+
 
 .navbar ul {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   list-style: none;
   display: flex;
   margin: 20px;
@@ -43,10 +51,11 @@ body {
 .navbar li {
   margin-right: 20px;
   align-items: right;
+  color: white;
 }
 
 .navbar li:hover {
-  text-shadow: 0 0 10px #00000096;
+  text-shadow: 0 0 10px #0077ff96;
   transition: text-shadow 0.3s;
 }
 
@@ -61,8 +70,14 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
 }
+
+.navbar a:hover {
+  color: #00aaff; /* Warna emas saat hover */
+  transition: color 0.3s ease; /* Efek transisi halus */
+}
+
 
 .navbar.transparent {
   background: rgba(26, 26, 30, 0.5); /* Latar belakang transparan saat digulir ke bawah */
@@ -71,27 +86,70 @@ body {
 }
 
 .navbar.transparent:hover {
-  background: url("../img/nav-bkg.jpg");
+  background-color: #1a1a1e;
   background-repeat: no-repeat;
   background-size: cover; /* Mengembalikan warna asli saat di-hover */
 }
 
 
+.video-container {
+    position: relative;
+    width: 100%; /* Video memenuhi lebar kontainer */
+    max-width: 1280px; /* Batas maksimal lebar video */
+    margin: 0 auto; /* Memusatkan video pada halaman */
+    padding: 10px;
+}
+
+video {
+    width: 100%; /* Video akan menyesuaikan dengan lebar kontainer */
+    height: auto; /* Tinggi video menyesuaikan secara otomatis */
+    border-radius: 10px; /* Membuat sudut video melengkung */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan */
+}
+
+/* Media queries untuk perangkat dengan ukuran layar yang berbeda */
+@media (max-width: 1280px) {
+    .video-container {
+        padding: 5px; /* Kurangi padding untuk layar lebih kecil */
+    }
+}
+
+@media (max-width: 800px) {
+    .video-container {
+        padding: 2px; /* Padding minimal untuk layar yang sangat kecil */
+    }
+
+    video {
+        max-height: 360px; /* Maksimal tinggi video untuk perangkat lebih kecil */
+    }
+}
+
+
+
+.intro-section {
+  background-color: #1a1a1e;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #0077ff;
+  margin-bottom: 20px;
+}
+
 
 .hero-image {
-  height: 50vh; /* Mengatur tinggi elemen untuk parallax */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/smaalcent.jpeg");
-  background-attachment: fixed; /* Membuat latar belakang tetap di tempatnya */
+  height: 50vh;
+  background-image: url("../img/smaalcent.jpeg");
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: 25vh;
-  padding-left: 5%;
+  padding: 25vh 5%;
   border-radius: 20px;
   box-shadow: 0 0 10px 1px #00000060;
   transition: background-position 0.3s ease;
 }
+
 
 
 .hero-text {
@@ -158,9 +216,9 @@ body {
 }
 
 .banner {
-  height: auto;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/bkg-banner.jpg");
+  height: 50vh; /* Atur tinggi banner */
+  background-image: url("../img/smaalcent.jpeg"); /* Menggunakan background yang sama dengan navbar */
+  background-attachment: fixed; /* Efek parallax untuk latar belakang */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -171,6 +229,7 @@ body {
   color: white;
   box-shadow: 0 0 10px 1px #00000060;
 }
+
 
 .banner h1 {
   text-shadow: 0 0 10px 1px black;
@@ -314,6 +373,71 @@ body {
   transform: scale(1.05) perspective(1px);
   box-shadow: 0 0 10px #26292c;
   transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+}
+
+.container {
+  background-color: #2b2b2b;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 2000px; /* Lebar maksimal agar konten tidak terlalu lebar */
+  border-radius: 15px; /* Sudut melengkung untuk tampilan lebih lembut */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Tambahkan border tipis */
+}
+
+/* Tambahkan padding dan margin lebih besar di layar kecil */
+@media (max-width: 600px) {
+  .container {
+      padding: 20px;
+      margin: 15px;
+  }
+}
+
+/* Untuk frame yang sedikit rounded */
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Rasio 16:9 untuk video responsif */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background-color: #1a1a1e;
+  border-radius: 15px; /* Sudut melengkung pada embed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Frame di sekitar embed */
+}
+
+.embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px; /* Sudut melengkung pada iframe */
+}
+
+#petunjuk-penggunaan {
+  background-color: #1a1a1e; /* Warna latar belakang yang kontras dengan konten */
+  padding: 30px; /* Tambahkan padding agar teks tidak mepet */
+  border-radius: 15px; /* Membuat sudut melengkung agar sesuai dengan desain keseluruhan */
+  margin-bottom: 40px; /* Jarak bawah agar tidak terlalu mepet dengan bagian berikutnya */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan lembut */
+  color: white; /* Warna teks yang kontras dengan latar belakang */
+}
+#referensi {
+  background-color: #1a1a1e; /* Warna latar belakang yang kontras dengan konten */
+  padding: 30px; /* Tambahkan padding agar teks tidak mepet */
+  border-radius: 15px; /* Membuat sudut melengkung agar sesuai dengan desain keseluruhan */
+  margin-bottom: 40px; /* Jarak bawah agar tidak terlalu mepet dengan bagian berikutnya */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan lembut */
+  color: white; /* Warna teks yang kontras dengan latar belakang */
+}
+
+@media (max-width: 600px) {
+  #petunjuk-penggunaan {
+      padding: 20px; /* Kurangi padding di perangkat kecil agar lebih pas */
+  }
 }
 
 
