@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.)?sir-iqbal\.id$
+RewriteCond %{REQUEST_URI} !^/repo/
+RewriteRule ^(.*)$ /repo/$1 [L]
