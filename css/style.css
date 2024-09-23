@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0px;
   height: 100%;
@@ -135,22 +139,24 @@ video {
   margin-bottom: 20px;
 }
 
-
 .hero-image {
-  height: 50vh;
-  background-image: url("../img/smaalcent.jpeg");
+  background-image: url('../img/smaalcent.jpeg');
+  height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: 25vh 5%;
-  border-radius: 20px;
-  box-shadow: 0 0 10px 1px #00000060;
-  transition: background-position 0.3s ease;
 }
 
-
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
 
 .hero-text {
   text-align: center;
@@ -173,25 +179,6 @@ video {
 }
 
 
-.hero-text button {
-  border: 2px solid rgb(255, 109, 236);
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: rgba(255, 109, 236, 0.188);
-  color: white;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.hero-text button:hover {
-  box-shadow: 0 0 10px 1px #ff74e8ae;
-  transform: scale(1.05) perspective(1px);
-  transition: box-shadow 0.3s, transform 0.3s;
-}
 
 .card-container {
   max-width: 100vw;
